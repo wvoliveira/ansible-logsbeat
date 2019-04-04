@@ -1,0 +1,17 @@
+- name: restart logstash
+  service:
+    name: logstash
+    enabled: yes
+    state: restarted
+
+- name: restart metricbeat
+  service:
+    name: metricbeat
+    enabled: yes
+    state: restarted
+
+- name: restart filebeat
+  service:
+    name: filebeat
+    enabled: yes
+    state: restarted

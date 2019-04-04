@@ -1,0 +1,3 @@
+- import_tasks: logstash.yml
+- import_tasks: metricbeat.yml
+- import_tasks: filebeat.yml

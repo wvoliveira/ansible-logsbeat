@@ -1,0 +1,6 @@
+- module: logstash
+  log:
+    enabled: true
+
+  slowlog:
+   enabled: true

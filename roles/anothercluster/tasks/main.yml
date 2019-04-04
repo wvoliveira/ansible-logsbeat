@@ -1,0 +1,14 @@
+---
+- name: install packages
+  package:
+    name: 
+      - java
+      - logstash
+    state: present
+
+- name: copy logstash conf
+  copy:
+    src: "{{ role_path }}/files/conf.d/logstash.conf"
+    dest: /etc/logstash/conf.d/
+  notify:
+    - check and restart logstash

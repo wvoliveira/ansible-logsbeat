@@ -1,0 +1,4 @@
+---
+- hosts: anothercluster
+  roles:
+    - anothercluster

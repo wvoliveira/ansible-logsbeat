@@ -1,0 +1,21 @@
+filebeat.inputs:
+
+filebeat.config.modules:
+  path: ${path.config}/modules.d/*.yml
+  reload.enabled: false
+  #reload.period: 10s
+
+setup.template.settings:
+  index.number_of_shards: 3
+  #index.codec: best_compression
+  #_source.enabled: false
+
+setup.kibana:
+  host: "kibana-host:80"
+
+output.elasticsearch:
+  hosts: ["elastic-host:9200"]
+
+processors:
+  - add_host_metadata: ~
+  - add_cloud_metadata: ~
