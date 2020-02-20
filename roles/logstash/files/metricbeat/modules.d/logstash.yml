@@ -1,6 +1,0 @@
-# Module: logstash
-# Docs: https://www.elastic.co/guide/en/beats/metricbeat/6.6/metricbeat-module-logstash.html
-
-- module: logstash
-  period: 5s
-  hosts: ["127.0.0.1:9600"]

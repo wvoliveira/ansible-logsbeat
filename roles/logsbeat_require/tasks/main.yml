@@ -1,0 +1,8 @@
+---
+- name: import gpg-key elasticsearch
+  command: rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
+
+- name: copy elastic repo
+  copy:
+    src: elastic/elastic.repo
+    dest: /etc/yum.repos.d/elastic.repo

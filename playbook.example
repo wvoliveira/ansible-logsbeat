@@ -1,0 +1,33 @@
+---
+- name: add gpg key and elastic repo
+  hosts: all
+  gather_facts: no
+
+  tasks:
+    - include_role:
+        name: logsbeat_require
+    when: logsbeat_add_repo | bool
+
+- name: install and configure logstash
+  hosts: logstash
+  gather_facts: no
+
+  tasks:
+    - include_role:
+        name: logsbeat_logstash
+
+- name: install and configure filebeat
+  hosts: filebeat
+  gather_facts: no
+
+  tasks:
+    - include_role:
+        name: logsbeat_filebeat
+
+- name: install and configure metricbeat
+  hosts: metricbeat
+  gather_facts: no
+
+  tasks:
+    - include_role:
+        name: logsbeat_metricbeat

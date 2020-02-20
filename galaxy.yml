@@ -1,0 +1,31 @@
+namespace: wvoliveira
+
+name: logsbeat
+
+version: 0.0.1
+
+readme: README.md
+
+authors:
+- Wellington Oliveira <oliveira@live.it>
+
+description: install/configure logstash, filebeat and metricbeat
+
+license:
+- MIT
+
+license_file: 'LICENSE'
+
+tags:
+    - logstash
+    - filebeat
+    - metricbeat
+    - elk
+
+repository: https://github.com/wvoliveira/ansible-logsbeat
+
+documentation: https://github.com/wvoliveira/ansible-logsbeat/wiki
+
+homepage: https://github.com/wvoliveira/ansible-logsbeat
+
+issues: https://github.com/wvoliveira/ansible-logsbeat/issues

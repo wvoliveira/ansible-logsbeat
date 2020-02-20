@@ -1,2 +1,0 @@
-- name: check and restart logstash
-  command: /opt/logstash/bin/logstash -t -f /etc/logstash/conf.d/logstash.conf && /etc/init.d/logstash restart

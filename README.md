@@ -1,34 +1,9 @@
-# Playbook logstash
+# Ansible collection: logsbeat
 
-Configure logstash, filebeat and metricbeat.
+It's was created to docker swarm environmen. To getting logs from containers.
 
-Works in theses clusters:
+Filebeat > logstash > elasticsearch.
 
-- [x] logstash-*
-- [x] anothercluster-*
+Filebeat installed in swarm docker hosts, send logs to logstash cluster and logstash delivery theses logs to elasticsearch cluster.
 
-## Tasks
-
-- filebeat: Colect logs from logstash;
-- logstash: Logs from external filebeat;
-- metricbeat: For system metrics.
-
-## Tested
-
-- Ansible 2.7.1
-- Debian 9
-- CentOS 7.5
-
-## TODO
-
-- [ ] Check if logstash and metricbeat are installed
-
-## Examples how execute
-
-Check syntax: `ansible-playbook -i production logstash.yml --syntax-check`  
-If root user run: `ansible-playbook -u root -k -i production <logstash anothercluster>.yml`  (if you use ssh-key, dont use `-k` option)
-If sudo run: `ansible-playbook -b -i production <logstash anothercluster>.yml`
-
-## Check facts from OS
-
-Run: `ansible -u root -k -i "<hostname or address>," -m setup <hostname or address>`
+Example playbook can view in playbook.example file and inventory example playbook can view in inventory.example file.

@@ -1,0 +1,14 @@
+[logstash]
+logstash-host1.internal
+logstash-host2.internal
+logstash-host3.internal
+
+[filebeat]
+filebeat-host1.internal
+filebeat-host2.internal
+filebeat-host3.internal
+
+[metricbeat]
+metricbeat-host1.internal
+metricbeat-host2.internal
+metricbeat-host3.internal

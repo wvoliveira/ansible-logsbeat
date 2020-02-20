@@ -1,0 +1,33 @@
+---
+- name: install metricbeat
+  yum:
+    name: metricbeat
+    state: present
+
+- name: enable logstash module
+  command: metricbeat modules enable logstash
+
+- name: copy configs
+  block:
+  - name: copy metricbeat conf
+    template:
+      src: metricbeat/metricbeat.yml.j2
+      dest: /etc/metricbeat/metricbeat.yml
+
+  - name: copy metricbeat config logstash module
+    template:
+      src: metricbeat/modules.d/logstash.yml.j2
+      dest: /etc/metricbeat/modules.d/logstash.yml
+
+  - name: copy metricbeat config system module
+    template:
+      src: metricbeat/modules.d/system.yml.j2
+      dest: /etc/metricbeat/modules.d/system.yml
+
+  notify:
+    - restart metricbeat
+
+- name: enable filebeat
+  service:
+    state: started
+    enabled: yes

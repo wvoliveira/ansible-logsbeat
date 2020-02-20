@@ -1,0 +1,30 @@
+---
+- name: install filebeat
+  yum:
+    name: filebeat
+    state: present
+
+- name: enable logstash module
+  command: filebeat modules enable logstash
+
+- name: copy filebeat conf and modules
+  block:
+  - name: copy filebeat conf
+    template:
+      src: filebeat/filebeat.yml
+      dest: /etc/filebeat/
+
+  - name: copy filebeat modules
+    copy:
+      src: filebeat/modules.d
+      dest: /etc/filebeat/
+
+  notify:
+    - restart filebeat
+
+- name: enable filebeat
+  service:
+    state: started
+    enabled: yes
+
+...

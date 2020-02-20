@@ -1,0 +1,13 @@
+- pipeline.id: main
+  queue.type: persisted
+  queue.page_capacity: 64mb
+  queue.drain: false
+  queue.max_events: 0
+  queue.max_bytes: 512mb
+  path.queue: /var/lib/logstash/queue
+  path.config: "/etc/logstash/conf.d/main.conf"
+  pipeline.workers: 1
+
+- pipeline.id: services
+  path.config: "/etc/logstash/conf.d/services.conf"
+  pipeline.workers: 1

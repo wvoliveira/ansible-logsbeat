@@ -1,0 +1,17 @@
+metricbeat.config.modules:
+  path: ${path.config}/modules.d/*.yml
+  reload.enabled: false
+
+setup.template.settings:
+  index.number_of_shards: 1
+  index.codec: best_compression
+
+setup.kibana:
+  host: "{{ logsbeat_kibana_host }}"
+
+output.elasticsearch:
+  hosts: "{{ logsbeat_elastic_hosts }}"
+
+processors:
+  - add_host_metadata: ~
+  - add_cloud_metadata: ~

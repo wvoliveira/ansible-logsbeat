@@ -1,4 +1,0 @@
----
-- hosts: logstash
-  roles:
-    - logstash

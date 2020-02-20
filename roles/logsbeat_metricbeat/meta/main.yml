@@ -1,0 +1,21 @@
+galaxy_info:
+  author: wvoliveira
+  description: install and configure metricbeat.
+
+  issue_tracker_url: https://github.com/wvoliveira/ansible-logsbeat/issues/tracker
+
+  license: MIT
+
+  min_ansible_version: 2.4
+
+  platforms:
+  - name: EL
+    versions:
+    - 7
+    - 8
+
+  galaxy_tags:
+    - logstash
+    - filebeat
+    - metricbeat
+    - elk

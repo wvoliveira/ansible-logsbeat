@@ -1,0 +1,29 @@
+---
+- name: install java and logstash
+  package:
+    name: 
+      - java
+      - logstash
+    state: present
+
+- name: copy logstash conf
+  block:
+  - name: copy logstash pipeline conf
+    copy:
+      src: logstash/pipelines.yml
+      dest: /etc/logstash/
+
+  - name: copy logstash conf.d
+    copy:
+      src: logstash/conf.d
+      dest: /etc/logstash/
+
+  notify:
+    - restart logstash
+
+- name: enable logstash
+  service:
+    name: logstash
+    state: started
+    enabled: yes
+    

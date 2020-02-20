@@ -1,0 +1,10 @@
+---
+logsbeat_add_repo: true
+
+logsbeat_kibana_host: "localhost:80"
+
+logsbeat_elastic_hosts:
+    - "localhost:9200"
+
+logsbeat_logstash_hosts:
+    - "localhost:9600"
